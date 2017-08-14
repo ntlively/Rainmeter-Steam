@@ -48,6 +48,6 @@ function Update()
   SKIN:Bang('!Log'," >>>logo url ^<<< \n\n")
   --SKIN:Bang('!SetOption', MeasureImage, URL ,GameList[1][3])
    --return GameList[1][3]
-   SKIN:Bang('!SetOption MeasureImage URL \"' ..GameList[1][3] .. '\"')
+   SKIN:Bang('!SetOption MeasureImage URL \"' ..GameList[2][3] .. '\"')
    SKIN:Bang('!UpdateMeasure MeasureImage')
 end
