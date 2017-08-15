@@ -2,7 +2,9 @@ function Initialize() --link this script to rainmeter code in "MyFirstSkin.ini"
    GameList = {}
    i=0
    measureXML = SKIN:GetMeasure('MeasureAllXML')
-   measureImage = SKIN:GetMeasure('MeasureImage')
+   firstImage = SKIN:GetMeasure('FirstImage')
+   secondImage = SKIN:GetMeasure('SecondImage')
+   thirdImage = SKIN:GetMeasure('ThirdImage')
 end
 
 
@@ -48,6 +50,17 @@ function Update()
   SKIN:Bang('!Log'," >>>logo url ^<<< \n\n")
   --SKIN:Bang('!SetOption', MeasureImage, URL ,GameList[1][3])
    --return GameList[1][3]
-   SKIN:Bang('!SetOption MeasureImage URL \"' ..GameList[2][3] .. '\"')
-   SKIN:Bang('!UpdateMeasure MeasureImage')
+   SKIN:Bang('!SetOption FirstImage URL \"' ..GameList[1][3] .. '\"')
+   SKIN:Bang('!SetOption FirstGame LeftMouseUpAction \"steam://rungameid/'..GameList[1][1] .. '\"')
+   
+   SKIN:Bang('!SetOption SecondImage URL \"' ..GameList[2][3] .. '\"')
+   SKIN:Bang('!SetOption SecondGame LeftMouseUpAction \"steam://rungameid/'..GameList[2][1] .. '\"')
+   
+   SKIN:Bang('!SetOption ThirdImage URL \"' ..GameList[3][3] .. '\"')
+   SKIN:Bang('!SetOption ThirdGame LeftMouseUpAction \"steam://rungameid/'..GameList[3][1] .. '\"')
+   
+   SKIN:Bang('!UpdateMeasure FirstImage')
+   SKIN:Bang('!UpdateMeasure SecondImage')
+   SKIN:Bang('!UpdateMeasure ThirdImage')
+
 end
